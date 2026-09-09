@@ -26,5 +26,3 @@ Flight numbers, airport times, seat, gate, baggage, walking time and status are 
 ## Run
 Open `index.html` in a modern browser. No backend or build step is required.
 
-## Interview angle
-This prototype demonstrates how HCI can simplify an aviation experience by starting from passenger questions and converting operational information into clear, actionable guidance.
