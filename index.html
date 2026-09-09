@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AeroTrip | Passenger Flight Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">✈</div>
+      <div><strong>AeroTrip</strong><span>Passenger Flight Assistant</span></div>
+    </div>
+    <div class="top-actions">
+      <button class="lang-btn" id="langBtn">EN</button>
+      <button class="theme-btn" id="themeBtn">◐</button>
+      <div class="profile"><span>A</span><div><strong>Ahmed</strong><small>Passenger</small></div></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">YOUR NEXT JOURNEY</span>
+        <h1>Good evening, Ahmed.</h1>
+        <p>Everything you need for your flight, in one place.</p>
+      </div>
+      <button class="flight-switcher" id="flightSwitcher">
+        <span>UPCOMING FLIGHT</span><strong>PK 233 · ISB → DXB</strong><small>Today · 21:45</small>
+      </button>
+    </section>
+
+    <section class="flight-card">
+      <div class="flight-header">
+        <div class="airline">
+          <div class="airline-mark pia">PK</div>
+          <div><strong>Pakistan International Airlines</strong><span>PK 233 · Economy</span></div>
+        </div>
+        <div class="status-pill on-time"><i></i> ON TIME</div>
+      </div>
+
+      <div class="route">
+        <div class="airport"><strong>ISB</strong><span>Islamabad</span><small>21:45</small></div>
+        <div class="route-line"><div class="route-plane">✈</div><span>3h 35m · Direct</span></div>
+        <div class="airport right"><strong>DXB</strong><span>Dubai</span><small>23:20</small></div>
+      </div>
+
+      <div class="journey-progress">
+        <div class="progress-step done"><b>✓</b><span>Check-in</span></div>
+        <div class="progress-step done"><b>✓</b><span>Security</span></div>
+        <div class="progress-step active"><b>3</b><span>Gate</span></div>
+        <div class="progress-step"><b>4</b><span>Boarding</span></div>
+        <div class="progress-step"><b>5</b><span>Departure</span></div>
+      </div>
+
+      <div class="flight-facts">
+        <div><span>GATE</span><strong>B07</strong><small>4 min walk</small></div>
+        <div><span>BOARDING</span><strong>21:05</strong><small>Starts in <b id="boardingCountdown">32 min</b></small></div>
+        <div><span>SEAT</span><strong>18A</strong><small>Window</small></div>
+        <div><span>BAGGAGE</span><strong>1 × 23 kg</strong><small>Checked</small></div>
+      </div>
+    </section>
+
+    <section class="attention-grid">
+      <article class="notice primary-notice">
+        <div class="notice-icon">🚶</div>
+        <div><span class="notice-label">NEXT ACTION</span><h3>Head to Gate B07</h3><p>Boarding starts at 21:05. You are about a 4-minute walk away.</p></div>
+        <button class="round-arrow" data-action="gate">→</button>
+      </article>
+      <article class="notice">
+        <div class="notice-icon soft">✓</div>
+        <div><span class="notice-label">BAGGAGE</span><h3>1 checked bag</h3><p>Your baggage allowance is 23 kg. Cabin bag: 7 kg.</p></div>
+        <button class="round-arrow" data-action="baggage">→</button>
+      </article>
+    </section>
+
+    <section class="quick-section">
+      <div class="section-heading"><div><span class="eyebrow">QUICK HELP</span><h2>What do you need?</h2></div></div>
+      <div class="help-grid">
+        <button class="help-card" data-action="gate"><span>🚪</span><strong>Gate</strong><small>Where should I go?</small></button>
+        <button class="help-card" data-action="status"><span>🕐</span><strong>Flight status</strong><small>Is my flight on time?</small></button>
+        <button class="help-card" data-action="baggage"><span>🧳</span><strong>Baggage</strong><small>Allowance & pickup</small></button>
+        <button class="help-card" data-action="seat"><span>💺</span><strong>My seat</strong><small>18A · Window</small></button>
+      </div>
+    </section>
+
+    <section class="details-section">
+      <div class="detail-card" id="gateCard">
+        <div class="detail-head"><div><span class="eyebrow">YOUR GATE</span><h2>B07</h2><p>Domestic / international concourse</p></div><span class="map-pin">↗</span></div>
+        <div class="gate-map"><div class="you">YOU</div><div class="path"></div><div class="gate-label">B07</div></div>
+        <div class="detail-row"><span>Walking time</span><strong>4 min</strong></div>
+        <div class="detail-row"><span>Boarding area</span><strong>Zone B</strong></div>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-head"><div><span class="eyebrow">FLIGHT STATUS</span><h2>On time</h2><p>Last updated just now</p></div><span class="status-dot"></span></div>
+        <div class="status-timeline">
+          <div class="status-line done"><i></i><div><strong>Check-in complete</strong><small>18:10</small></div></div>
+          <div class="status-line done"><i></i><div><strong>Security complete</strong><small>18:42</small></div></div>
+          <div class="status-line current"><i></i><div><strong>Proceed to gate</strong><small>Now</small></div></div>
+          <div class="status-line"><i></i><div><strong>Boarding</strong><small>21:05</small></div></div>
+          <div class="status-line"><i></i><div><strong>Departure</strong><small>21:45</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="travel-tips">
+      <div><span class="eyebrow">TRAVEL TIP</span><strong>Keep your passport and boarding pass ready at the gate.</strong><p>Tip: Screens can change. Check the airport displays before boarding.</p></div>
+      <button class="text-button" data-action="status">View flight details →</button>
+    </section>
+  </main>
+
+  <footer>
+    <span>AeroTrip · Passenger prototype</span>
+    <span>Demo flight data · Not connected to live airline systems</span>
+  </footer>
+</div>
+
+<div class="modal-backdrop hidden" id="modalBackdrop">
+  <div class="modal">
+    <button class="close" id="closeModal">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
